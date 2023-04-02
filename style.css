@@ -16,8 +16,8 @@ body{
 .left-bg{
     flex-shrink: 0;
     width: 100%;
-    max-width: 1200%;
-    background: url("./images/bg-left.png") repeat-y;
+    max-width: 1200px;
+    background: url("../images/bg-left.png") repeat-y;
 }
 
 
@@ -32,7 +32,7 @@ body{
         display: block;
         flex-grow: 1;
 
-background: url("./images/bg-right.png") repeat-y;   
+background: url("../images/bg-right.png") repeat-y;   
  }    
 }
 
@@ -50,6 +50,6 @@ background: url("./images/bg-right.png") repeat-y;
     .center-bg{
         display: block;
         flex-grow: 1;
-        background: url("./images/bg-center.png") repeat;
+        background: url("../images/bg-center.png") repeat;
     }
 }
