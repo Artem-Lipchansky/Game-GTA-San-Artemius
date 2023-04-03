@@ -23,7 +23,7 @@ body{
 }
 
 
-.center-bg,
+.center,
 .right-b {
     display: none;
 
@@ -48,7 +48,7 @@ body{
 
     
 
-    .center-bg{
+    .center{
         display: block;
         flex-grow: 1;
         background: url("./images/center.png") repeat;
