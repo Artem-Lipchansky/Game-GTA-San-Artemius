@@ -3,7 +3,7 @@ body{
     overflow: hidden;
 }
 
-.b-wrap{
+.bg-wrap{
     position: fixed;
     z-index: -1;
     top:0;
@@ -15,31 +15,31 @@ body{
     
 }
 
-.left-b{
+.left-bg{
     flex-shrink: 0;
     width: 100%;
     max-width: 1200px;
-    background: url("./images/left-b.png") repeat-y;
+    background: url("./images/left-bg.png") repeat-y;
 }
 
 
-.center-b,
-.right-b {
+.center-bg,
+.right-bg {
     display: none;
 
 }
 
 @media only screen and (min-width: 1200px) {
-    .right-b {
+    .right-bg {
         display: block;
         flex-grow: 1;
-        background: url("./images/right-b.png") repeat-y;   
+        background: url("./images/right-bg.png") repeat-y;   
  }    
 }
 
 
 @media only screen and (min-width: 2400px) {
-    .right-b{
+    .right-bg{
      width: 1200px;
      flex-grow: 0;
      flex-shrink: 0;
@@ -48,10 +48,10 @@ body{
 
     
 
-    .center-b{
+    .center-bg{
         display: block;
         flex-grow: 1;
-        background: url("./images/center-b.png") repeat;
+        background: url("./images/center-bg.png") repeat;
     }
 }
 
