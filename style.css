@@ -17,7 +17,7 @@ body{
     flex-shrink: 0;
     width: 100%;
     max-width: 1200px;
-    background: url("../images/bg-left.png") repeat-y;
+    background: url("./img/bg-right.png") repeat-y;
 }
 
 
@@ -27,17 +27,16 @@ body{
 
 }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1200px) {
     .right-bg {
         display: block;
         flex-grow: 1;
-
-background: url("../images/bg-right.png") repeat-y;   
+        background: url("./img/bg-left.png") repeat-y;   
  }    
 }
 
 
-@media only screen and (min-width: 2400px){
+@media only screen and (min-width: 2400px) {
     .right-bg{
      width: 1200px;
      flex-grow: 0;
@@ -50,6 +49,6 @@ background: url("../images/bg-right.png") repeat-y;
     .center-bg{
         display: block;
         flex-grow: 1;
-        background: url("../images/bg-center.png") repeat;
+        background: url("./img/bg-center.png") repeat;
     }
 }
