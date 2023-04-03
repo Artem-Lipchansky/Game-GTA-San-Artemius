@@ -3,7 +3,7 @@ body{
     overflow: hidden;
 }
 
-.bg-wrap{
+.b-wrap{
     position: fixed;
     z-index: -1;
     top:0;
@@ -23,7 +23,7 @@ body{
 }
 
 
-.center,
+.center-b,
 .right-b {
     display: none;
 
@@ -48,10 +48,10 @@ body{
 
     
 
-    .center{
+    .center-b{
         display: block;
         flex-grow: 1;
-        background: url("./images/center.png") repeat;
+        background: url("./images/center-b.png") repeat;
     }
 }
 
