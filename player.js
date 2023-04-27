@@ -1,8 +1,17 @@
 export class Player {
-    constructor(x,y, context) {
+    constructor(x, y, context) {
         this.x = x;
         this.y = y;
         this.context = context;
+        this.cursorPosition = {
+            x: 0,
+            y: 0
+        };
+
+        dicument.addEventListener(mousemove, event => {
+            this.cursorPosition.x = event.clientX;
+            this.cursorPosition.y = event.clientY;
+        });
 
         this.image = new Image();
         this.image.src = "./images/player-b.png";
@@ -23,5 +32,9 @@ export class Player {
 
 
         );
+    }
+
+    draw(){
+        
     }
 }
