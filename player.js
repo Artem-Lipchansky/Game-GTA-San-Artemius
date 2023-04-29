@@ -8,7 +8,7 @@ export class Player {
             y: 0
         };
 
-        dicument.addEventListener(mousemove, event => {
+        document.addEventListener("mousemove", event => {
             this.cursorPosition.x = event.clientX;
             this.cursorPosition.y = event.clientY;
         });
@@ -16,8 +16,9 @@ export class Player {
         this.image = new Image();
         this.image.src = "./images/player-b.png";
         this.imageWidth = 50;
-       this.imageHeight = 60;
+        this.imageHeight = 60;
     }
+
     drawImg() {
         this.context.drawImage(
         this.image,
@@ -34,12 +35,13 @@ export class Player {
         );
     }
 
-    draw(){
+    draw() {
         this.context.save();
         let angle = Math.atan2(this.cursorPosition.y - this.y, this.cursorPosition.x - this.x);
         this.context.translate(this.x, this.y);
-        this.context.rotare(angle + Math.PI/2);
+        this.context.rotate(angle + Math.PI/2);
         this.context.translate(-this.x, -this.y);
-        this.drawImg()
+        this.drawImg();
+        this.context.restore() ;
     }
 }

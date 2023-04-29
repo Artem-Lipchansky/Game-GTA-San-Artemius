@@ -17,6 +17,6 @@ animate();
 function animate() {
     requestAnimationFrame(animate);
 
-    player.drawImg();
+    player.draw();
 
 }
