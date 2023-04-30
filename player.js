@@ -23,7 +23,7 @@ export class Player {
             minX: movementLimits.minX + this.radius,
             maxX: movementLimits.maxX - this.radius,
             minY: movementLimits.minY + this.radius,
-            minY: movementLimits.minY - this.radius,
+            minY: movementLimits.maxY - this.radius,
         }
 
         document.addEventListener("mousemove", event => {
