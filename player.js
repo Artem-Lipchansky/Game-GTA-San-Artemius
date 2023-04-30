@@ -23,7 +23,7 @@ export class Player {
             minX: movementLimits.minX + this.radius,
             maxX: movementLimits.maxX - this.radius,
             minY: movementLimits.minY + this.radius,
-            minY: movementLimits.maxY - this.radius,
+            maxY: movementLimits.maxY - this.radius,
         }
 
         document.addEventListener("mousemove", event => {
@@ -103,7 +103,7 @@ export class Player {
         if (this.shouldMove(MOVE_RIGHT_KEY_CODES)) this.x += this.velocity;
     }
 
-    checkPositionLimitAndUpdate(){
+    checkPositionLimitAndUpdate() {
         if (this.y < this.movementLimits.minY) this.y = this.movementLimits.minY;
         if (this.y > this.movementLimits.maxY) this.y = this.movementLimits.maxY;
         if (this.x < this.movementLimits.minX) this.x = this.movementLimits.minX;

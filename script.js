@@ -43,4 +43,4 @@ function animate() {
 
     player.update();
 
-}
+} 
