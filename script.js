@@ -8,9 +8,32 @@ canvas.height = document.documentElement.clientHeight;
 
 
 
-let player = new Player(canvas.width/2, canvas.height/2, context);
+let player;
 
-animate();
+startGame();
+
+function startGame(){
+    init();
+    animate();
+}
+
+function init(){
+    const movementLimits = {
+    minX: 0,
+    maX: canvas.width,
+    minY: 0,
+    maxY: canvas.height,
+};
+
+
+player = new Player(canvas.width/2, canvas.height/2, context, movementLimits);
+}
+
+
+
+
+
+
 
 
 
