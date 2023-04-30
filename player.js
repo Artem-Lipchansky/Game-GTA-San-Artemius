@@ -54,7 +54,7 @@ export class Player {
             this.imageTick++;
         }
 
-        if (this.imageTick > imageTickLimit*2) {
+        if (this.imageTick > imageTickLimit * 2) {
             this.imageTick = 0;
         }
 
@@ -67,8 +67,8 @@ export class Player {
         0,
         this.imageWidth,
         this.imageHeight,
-        this.x - this.imageWidth/2,
-        this.y - this.imageHeight/2,
+        this.x - this.imageWidth / 2,
+        this.y - this.imageHeight / 2,
         this.imageWidth,
         this.imageHeight
 
@@ -80,7 +80,7 @@ export class Player {
         this.context.save();
         let angle = Math.atan2(this.cursorPosition.y - this.y, this.cursorPosition.x - this.x);
         this.context.translate(this.x, this.y);
-        this.context.rotate(angle + Math.PI/2);
+        this.context.rotate(angle + Math.PI / 2);
         this.context.translate(-this.x, -this.y);
         this.drawImg();
         this.context.restore();
