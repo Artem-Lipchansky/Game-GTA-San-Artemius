@@ -59,7 +59,7 @@ export class Player {
 
 
     update() {
-        this.draw()
+        this.draw();
         this.updatePosition();
 
         
@@ -68,8 +68,8 @@ export class Player {
     updatePosition() {
         if (this.shouldMove(MOVE_UP_KEY_CODES)) this.y -= this.velocity;
         if (this.shouldMove(MOVE_DOWN_KEY_CODES)) this.y += this.velocity;
-        if (this.shouldMove(MOVE_LEFT_KEY_CODES)) this.y -= this.velocity;
-        if (this.shouldMove(MOVE_RIGHT_KEY_CODES)) this.y += this.velocity;
+        if (this.shouldMove(MOVE_LEFT_KEY_CODES)) this.x -= this.velocity;
+        if (this.shouldMove(MOVE_RIGHT_KEY_CODES)) this.x += this.velocity;
     }
 
     shouldMove(keys) {
