@@ -104,7 +104,10 @@ export class Player {
     }
 
     checkPositionLimitAndUpdate(){
-        if (this.y < this.movementLimits.minY) this.
+        if (this.y < this.movementLimits.minY) this.y = this.movementLimits.minY;
+        if (this.y > this.movementLimits.maxY) this.y = this.movementLimits.maxY;
+        if (this.x < this.movementLimits.minX) this.x = this.movementLimits.minX;
+        if (this.x > this.movementLimits.maxX) this.x = this.movementLimits.maxX;
     }
 
     shouldMove(keys) {
