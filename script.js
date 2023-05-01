@@ -20,7 +20,7 @@ function startGame(){
 function init(){
     const movementLimits = {
     minX: 0,
-    maX: canvas.width,
+    maxX: canvas.width,
     minY: 0,
     maxY: canvas.height,
 };

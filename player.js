@@ -96,6 +96,8 @@ export class Player {
         
     }
 
+    //=============================BOTTON-MOVE======================================//
+
     updatePosition() {
         if (this.shouldMove(MOVE_UP_KEY_CODES)) this.y -= this.velocity;
         if (this.shouldMove(MOVE_DOWN_KEY_CODES)) this.y += this.velocity;
