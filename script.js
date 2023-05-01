@@ -2,6 +2,7 @@
 //======================================IMPORT-FROM-PLAYER-FILE==============================//
 
 import { Player } from "./player.js";
+import { Projectile } from "./projectile.js";
 
 
 const canvas = document.querySelector('canvas');
@@ -59,6 +60,8 @@ function createProjectile(event) {
 function animate() {
     requestAnimationFrame(animate);
     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    projectiles.forEaach(projectile => projectile.update());
 
     player.update();
 

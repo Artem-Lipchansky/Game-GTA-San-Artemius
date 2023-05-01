@@ -11,6 +11,19 @@ export class Projectile{
         this.velocity = {
             x: cosBetweenPoints(targetX, targetY, x, y) * 15,
             x: sinBetweenPoints(targetX, targetY, x, y) * 15,
-        }
+        };
+    }
+
+    draw() {
+        this.context.beginPath();
+        this.context.arc(this.x, this.y, this.radius, 0, Math.PI*2);
+        this.context.fillStyle = this.color;
+        this.context.fill();
+    }
+
+    update(){
+        this.draw();
+        this.x += this.velosity.x;
+        this.y += this.velocity.y;
     }
 }
