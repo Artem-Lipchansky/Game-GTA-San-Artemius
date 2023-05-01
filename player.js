@@ -1,9 +1,15 @@
+
+//========================================BUTTON-ACTIVE============================================//
+
 const MOVE_UP_KEY_CODES = ["ArrowUp", "KeyW"];
 const MOVE_DOWN_KEY_CODES = ["ArrowDown", "KeyS"];
 const MOVE_LEFT_KEY_CODES = ["ArrowLeft", "KeyA"];
 const MOVE_RIGHT_KEY_CODES = ["ArrowRight", "KeyD"];
 const ALL_MOVE_KEY_CODES = [...MOVE_UP_KEY_CODES, ...MOVE_DOWN_KEY_CODES, ...MOVE_LEFT_KEY_CODES, ...MOVE_RIGHT_KEY_CODES];
 
+
+
+//========================================PLAYER-CONTROL=================================================//
 
 export class Player {
     constructor(x, y, context, movementLimits) {
@@ -42,6 +48,9 @@ export class Player {
         this.isMoving = false;
         this.imageTick = 0;
     }
+
+
+    //================================================DRAW====================================================//
 
     drawImg() {
         const  imageTickLimit = 18;
@@ -96,7 +105,7 @@ export class Player {
         
     }
 
-    //=============================BOTTON-MOVE======================================//
+    //=============================BOTTON-MOVE-LIMITS======================================//
 
     updatePosition() {
         if (this.shouldMove(MOVE_UP_KEY_CODES)) this.y -= this.velocity;

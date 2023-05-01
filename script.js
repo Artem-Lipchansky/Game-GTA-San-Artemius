@@ -1,3 +1,6 @@
+
+//======================================IMPORT-FROM-PLAYER-FILE==============================//
+
 import { Player } from "./player.js";
 
 
@@ -7,6 +10,7 @@ canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
 
+//======================================GAME-START==========================================//
 
 let player;
 
@@ -33,7 +37,7 @@ player = new Player(canvas.width/2, canvas.height/2, context, movementLimits);
 
 
 
-
+//======================================================ANIMATE============================================//
 
 
 
