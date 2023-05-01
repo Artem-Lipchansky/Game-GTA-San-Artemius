@@ -13,6 +13,7 @@ canvas.height = document.documentElement.clientHeight;
 //======================================GAME-START==========================================//
 
 let player;
+let Projectiles = [];
 
 startGame();
 
@@ -31,6 +32,20 @@ function init(){
 
 
 player = new Player(canvas.width/2, canvas.height/2, context, movementLimits);
+addEventListener(click,Projectile);
+}
+
+function createProjectile(event) {
+    Projectiles.push(
+        new Projectile(
+            player.x,
+            player.y,
+            event.clientX,
+            event.clientY,
+            context
+        )
+
+    );
 }
 
 
