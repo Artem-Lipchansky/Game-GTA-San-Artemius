@@ -14,7 +14,7 @@ canvas.height = document.documentElement.clientHeight;
 //======================================GAME-START==========================================//
 
 let player;
-let Projectiles = [];
+let projectiles = [];
 
 startGame();
 
@@ -33,11 +33,11 @@ function init(){
 
 
 player = new Player(canvas.width/2, canvas.height/2, context, movementLimits);
-addEventListener(click,Projectile);
+addEventListener("click", createProjectile);
 }
 
 function createProjectile(event) {
-    Projectiles.push(
+    projectiles.push(
         new Projectile(
             player.x,
             player.y,
@@ -61,7 +61,7 @@ function animate() {
     requestAnimationFrame(animate);
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    projectiles.forEaach(projectile => projectile.update());
+    projectiles.forEach(projectile => projectile.update());
 
     player.update();
 
