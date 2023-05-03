@@ -23,7 +23,7 @@ function startGame(){
     animate();
 }
 
-function init(){
+function init() {
     const movementLimits = {
     minX: 0,
     maxX: canvas.width,

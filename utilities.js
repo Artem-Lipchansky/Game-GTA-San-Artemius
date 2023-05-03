@@ -16,4 +16,4 @@ export function distanceBetweenTwoPoints(x1, y1, x2, y2){
     const yDiff = y1 - y2;
     return Math.hypot(xDiff, yDiff);
 
-}
+} 
