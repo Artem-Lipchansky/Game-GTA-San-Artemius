@@ -3,6 +3,7 @@
 
 import { Player } from "./player.js";
 import { Projectile } from "./projectile.js";
+import { Enemy } from "./enemy.js";
 
 
 const canvas = document.querySelector('canvas');
@@ -52,7 +53,8 @@ function createProjectile(event) {
 }
 
 function spawnEnemies() {
-  enemies.push(new Enemy(canvas.width, canvas.height, context, player));   
+  enemies.push(new Enemy(canvas.width, canvas.height, context, player)); 
+    
 }
 
 
@@ -74,7 +76,10 @@ function animate() {
     projectiles.forEach(projectile => projectile.update());
 
     player.update();
-    return
+    enemies.forEach(enemy => enemy.update());
+    
+    //return
+
 } 
 
 function projectileInsideWindow(projectile) {

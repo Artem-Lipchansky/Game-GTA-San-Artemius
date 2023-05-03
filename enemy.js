@@ -1,4 +1,4 @@
-import { cosBetweenTwoPoints } from "./utilities";
+import { cosBetweenTwoPoints, sinBetweenTwoPoints } from "./utilities.js";
 
 export class Enemy{
     constructor(canvasWidth, canvasHeight, context, player) {
@@ -63,7 +63,12 @@ export class Enemy{
     update(){
         this.draw();
         this.velocity = {
-            x: cosBetweenTwoPoints(this.player.x, this.player.y, )
+            x: cosBetweenTwoPoints(this.player.x, this.player.y, this.x, this.y) *2,
+            y: sinBetweenTwoPoints(this.player.x, this.player.y, this.x, this.y) *2,
         }
+
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+        
     }
 }
