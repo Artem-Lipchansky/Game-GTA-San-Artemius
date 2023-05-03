@@ -33,7 +33,7 @@ function init() {
     minY: 0,
     maxY: canvas.height,
 };
-
+ 
 
 player = new Player(canvas.width/2, canvas.height/2, context, movementLimits);
 addEventListener("click", createProjectile);
