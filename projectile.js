@@ -1,5 +1,5 @@
 
-import { cosBetweenPoints, sinBetweenPoints } from "./utilities.js";
+import { cosBetweenTwoPoints, sinBetweenTwoPoints } from "./utilities.js";
 
 export class Projectile{
     constructor(x, y, targetX, targetY, context) {
@@ -9,8 +9,8 @@ export class Projectile{
         this.radius = 3;
         this.color = "#810000";
         this.velocity = {
-            x: cosBetweenPoints(targetX, targetY, x, y) * 15,
-            x: sinBetweenPoints(targetX, targetY, x, y) * 15,
+            x: cosBetweenTwoPoints(targetX, targetY, x, y) * 15,
+            x: sinBetweenTwoPoints(targetX, targetY, x, y) * 15,
         };
     }
 
@@ -23,7 +23,7 @@ export class Projectile{
 
     update(){
         this.draw();
-        this.x += this.velosity.x;
+        this.x += this.velocity.x;
         this.y += this.velocity.y;
     }
 }
