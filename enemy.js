@@ -54,7 +54,7 @@ export class Enemy{
         this.context.translate( this.x, this.y);
         this.context.rotate(angle + Math.PI/2);
         this.context.translate(-this.x, -this.y);
-        this.drawImg()
+        this.drawImg();
         this.context.restore();
 
 
