@@ -15,12 +15,14 @@ canvas.height = document.documentElement.clientHeight;
 
 let player;
 let projectiles = [];
+let enemies = [];
 
 startGame();
 
 function startGame(){
     init();
     animate();
+    spawnEnemies ();
 }
 
 function init() {
@@ -49,6 +51,10 @@ function createProjectile(event) {
     );
 }
 
+function spawnEnemies() {
+  enemies.push(new Enemy(canvas.width, canvas.height, context, player));   
+}
+
 
 
 
@@ -63,14 +69,20 @@ function animate() {
 
     projectiles = projectiles.filter(projectileInsideWindow);
 
+    //console.log(projectiles);
+
     projectiles.forEach(projectile => projectile.update());
 
     player.update();
     return
 } 
 
-function projectileInsideWindow(projectile){
+function projectileInsideWindow(projectile) {
 return projectile.x + projectile.radius > 0 &&
-projectile.x - 
+projectile.x - projectile.radius < canvas.width &&
+projectile.y + projectile.radius > 0 &&
+projectile.y - projectile.radius < canvas.height;
+
+
 
 }
