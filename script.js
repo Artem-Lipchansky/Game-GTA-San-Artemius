@@ -50,7 +50,7 @@ function createProjectile(event) {
         )
 
     );
-}
+};
 
 function spawnEnemies() {
   enemies.push(new Enemy(canvas.width, canvas.height, context, player)); 
@@ -77,7 +77,7 @@ function animate() {
 
     player.update();
     enemies.forEach(enemy => enemy.update());
-    
+
     //return
 
 } 

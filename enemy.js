@@ -29,7 +29,7 @@ export class Enemy{
         this.imageTick++;
         if (this.imageTick > imageTickLimit * 2) this.imageTick = 0;
 
-
+    
         this.context.drawImage(
             this.image,
             subX,
@@ -54,7 +54,7 @@ export class Enemy{
         this.context.translate( this.x, this.y);
         this.context.rotate(angle + Math.PI/2);
         this.context.translate(-this.x, -this.y);
-        this.drawImg();
+        this.drawImg()
         this.context.restore();
 
 
@@ -65,7 +65,7 @@ export class Enemy{
         this.velocity = {
             x: cosBetweenTwoPoints(this.player.x, this.player.y, this.x, this.y) *2,
             y: sinBetweenTwoPoints(this.player.x, this.player.y, this.x, this.y) *2,
-        }
+        };
 
         this.x += this.velocity.x;
         this.y += this.velocity.y;
