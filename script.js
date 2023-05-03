@@ -18,6 +18,7 @@ canvas.height = document.documentElement.clientHeight;
 let player;
 let projectiles = [];
 let enemies = [];
+let particles = [];
 
 startGame();
 
@@ -103,6 +104,10 @@ function checkHittingEnemy(enemy) {
 
         removeProjectileByIndex(index);
         enemy.health--;
+
+        if (enemy.health < 1) {
+            enemy.createExplosion(particles);
+        }
         
         return true;
     });
