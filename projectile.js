@@ -10,7 +10,7 @@ export class Projectile{
         this.color = "#810000";
         this.velocity = {
             x: cosBetweenTwoPoints(targetX, targetY, x, y) * 15,
-            x: sinBetweenTwoPoints(targetX, targetY, x, y) * 15,
+            y: sinBetweenTwoPoints(targetX, targetY, x, y) * 15,
         };
     }
 
