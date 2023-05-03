@@ -1,3 +1,4 @@
+import { cosBetweenTwoPoints } from "./utilities";
 
 export class Enemy{
     constructor(canvasWidth, canvasHeight, context, player) {
@@ -53,6 +54,16 @@ export class Enemy{
         this.context.translate( this.x, this.y);
         this.context.rotate(angle + Math.PI/2);
         this.context.translate(this.x, this.y);
-        
+        this.drawImg();
+        this.context.restore();
+
+
+    }
+
+    update(){
+        this.draw();
+        this.velocity = {
+            x: cosBetweenTwoPoints(this.player.x, this.player.y, )
+        }
     }
 }
