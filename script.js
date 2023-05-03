@@ -71,12 +71,15 @@ function animate() {
     requestAnimationFrame(animate);
     context.clearRect(0, 0, canvas.width, canvas.height);
 
+    particles = particles.filter(particle => particle.alpha > 0);
     projectiles = projectiles.filter(projectileInsideWindow);
     enemies.forEach(enemy => checkHittingEnemy(enemy));
     enemies = enemies.filter(enemy => enemy.health > 0);
+    const isGameOver = enemies.some(checkHittingPlayer);
 
     //console.log(projectiles);
 
+    particles.forEach(particle => particle.update());
     projectiles.forEach(projectile => projectile.update());
 
     player.update();
@@ -94,6 +97,11 @@ projectile.y - projectile.radius < canvas.height;
 
 
 
+}
+
+
+function checkHittingPlayer(enemy){
+    
 }
 
 

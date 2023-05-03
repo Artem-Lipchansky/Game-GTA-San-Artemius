@@ -4,10 +4,10 @@
         this.y = y;
         this.context = context;
         this.radius = Math.random() + 2;
-        this.color = "#929101";
+        this.color = "#FF0000";
         this.velocity = {
-            x: (Math.random()- 0,5) * Math.random() * 5,
-            y: (Math.random()- 0,5) * Math.random() * 5,
+            x: (Math.random()- 0.5) * Math.random() * 5,
+            y: (Math.random()- 0.5) * Math.random() * 5,
         } 
         
         this.alpha = 1;
@@ -34,7 +34,7 @@
         this.velocity.y *= this.friction;
         this.x += this.velocity.x;
         this.y += this.velocity.y;
-        this.alpha-= 0.04;
+        this.alpha -= 0.04;
 
     }
 

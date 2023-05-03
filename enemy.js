@@ -1,5 +1,5 @@
 import { cosBetweenTwoPoints, sinBetweenTwoPoints } from "./utilities.js";
-import { Particle} from "./particle.js";
+import { Particle } from "./particle.js";
 
 export class Enemy{
     constructor(canvasWidth, canvasHeight, context, player) {
