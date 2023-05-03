@@ -53,7 +53,7 @@ export class Enemy{
         let angle = Math.atan2(this.player.y, - this.y, this.player.x - this.x);
         this.context.translate( this.x, this.y);
         this.context.rotate(angle + Math.PI/2);
-        this.context.translate(this.x, this.y);
+        this.context.translate(-this.x, -this.y);
         this.drawImg();
         this.context.restore();
 
@@ -69,6 +69,6 @@ export class Enemy{
 
         this.x += this.velocity.x;
         this.y += this.velocity.y;
-        
+
     }
 }
