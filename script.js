@@ -13,13 +13,17 @@ canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 
 const wastedElement = document.querySelector('.wasted');
+const scoreElement = document.querySelector('#score');
 //======================================GAME-START==========================================//
 
 let player;
 let projectiles = [];
 let enemies = [];
 let particles = [];
+let score = 0;
 let animationId;
+let spawnIntervalId;
+let countIntervalId;
 
 startGame();
 
@@ -56,8 +60,20 @@ function createProjectile(event) {
 };
 
 function spawnEnemies() {
-  enemies.push(new Enemy(canvas.width, canvas.height, context, player)); 
+    let countOfSpawnEnemies = 1;
+
+    countIntervalId = setInterval(() => countOfSpawnEnemies++, 30000);
+    spawnIntervalId = setInterval(() => spawnCountEnemies(countOfSpawnEnemies), 1000);
+    spawnCountEnemies(countOfSpawnEnemies); 
     
+}
+
+function spawnCountEnemies(count){
+   for (let i=0; i< count; i++){
+    enemies.push(new Enemy(canvas.width, canvas.height, context, player));
+    
+   } 
+
 }
 
 
@@ -78,7 +94,10 @@ function animate() {
     enemies = enemies.filter(enemy => enemy.health > 0);
     const isGameOver = enemies.some(checkHittingPlayer);
     if (isGameOver){
+
         wastedElement.style.display = 'block';
+        clearInterval(countIntervalId);
+        clearInterval(spawnIntervalId);
         cancelAnimationFrame(animationId);
     }
 
@@ -120,6 +139,7 @@ function checkHittingEnemy(enemy) {
         enemy.health--;
 
         if (enemy.health < 1) {
+            increaseScore();
             enemy.createExplosion(particles);
         }
         
@@ -129,4 +149,9 @@ function checkHittingEnemy(enemy) {
 
 function removeProjectileByIndex(index) {
     projectiles.splice(index, 1);
+}
+
+function increaseScore (){
+    score += 250;
+    scoreElement.innerHTML = score;
 }

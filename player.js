@@ -2,10 +2,10 @@
 //========================================BUTTON-ACTIVE============================================//
 
 const MOVE_UP_KEY_CODES = ["ArrowUp", "KeyW"];
-const MOVE_DOWN_KEY_CODES = ["ArrowDown", "KeyS"];
-const MOVE_LEFT_KEY_CODES = ["ArrowLeft", "KeyA"];
-const MOVE_RIGHT_KEY_CODES = ["ArrowRight", "KeyD"];
-const ALL_MOVE_KEY_CODES = [...MOVE_UP_KEY_CODES, ...MOVE_DOWN_KEY_CODES, ...MOVE_LEFT_KEY_CODES, ...MOVE_RIGHT_KEY_CODES];
+const MOVE_DOWN_KEYS_CODES = ["ArrowDown", "KeyS"];
+const MOVE_LEFT_KEYS_CODES = ["ArrowLeft", "KeyA"];
+const MOVE_RIGHT_KEYS_CODES = ["ArrowRight", "KeyD"];
+const ALL_MOVE_KEY_CODES = [...MOVE_UP_KEY_CODES, ...MOVE_DOWN_KEYS_CODES, ...MOVE_LEFT_KEYS_CODES, ...MOVE_RIGHT_KEYS_CODES];
 
 
 
@@ -109,9 +109,9 @@ export class Player {
 
     updatePosition() {
         if (this.shouldMove(MOVE_UP_KEY_CODES)) this.y -= this.velocity;
-        if (this.shouldMove(MOVE_DOWN_KEY_CODES)) this.y += this.velocity;
-        if (this.shouldMove(MOVE_LEFT_KEY_CODES)) this.x -= this.velocity;
-        if (this.shouldMove(MOVE_RIGHT_KEY_CODES)) this.x += this.velocity;
+        if (this.shouldMove(MOVE_DOWN_KEYS_CODES)) this.y += this.velocity;
+        if (this.shouldMove(MOVE_LEFT_KEYS_CODES)) this.x -= this.velocity;
+        if (this.shouldMove(MOVE_RIGHT_KEYS_CODES)) this.x += this.velocity;
     }
 
     checkPositionLimitAndUpdate() {
