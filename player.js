@@ -13,8 +13,9 @@ const ALL_MOVE_KEY_CODES = [...MOVE_UP_KEY_CODES, ...MOVE_DOWN_KEYS_CODES, ...MO
 
 export class Player {
     constructor(x, y, context, movementLimits) {
-        this.velocity  = 3;
         this.radius = 15;
+        this.velocity = 3;
+        
 
 
         this.x = x;
@@ -30,17 +31,19 @@ export class Player {
             maxX: movementLimits.maxX - this.radius,
             minY: movementLimits.minY + this.radius,
             maxY: movementLimits.maxY - this.radius,
-        }
-
-        document.addEventListener("mousemove", event => {
+        };
+        
+        this.keyMap = new Map();
+        document.addEventListener("mousemove", (event => {
             this.cursorPosition.x = event.clientX;
             this.cursorPosition.y = event.clientY;
-        });
+        }));
 
 
-        this.keyMap = new Map();
-        document.addEventListener("keydown", event => this.keyMap.set(event.code, true));
-        document.addEventListener("keyup", event => this.keyMap.delete(event.code));
+        
+        document.addEventListener("keydown", (event) => this.keyMap.set(event.code, true));
+        document.addEventListener("keyup", (event) => this.keyMap.delete(event.code));
+        
         this.image = new Image();
         this.image.src = "./images/player-b.png";
         this.imageWidth = 50;
@@ -79,10 +82,7 @@ export class Player {
         this.x - this.imageWidth / 2,
         this.y - this.imageHeight / 2,
         this.imageWidth,
-        this.imageHeight
-
-
-        );
+        this.imageHeight);
     }
 
     draw() {
